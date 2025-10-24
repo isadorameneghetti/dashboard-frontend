@@ -42,7 +42,7 @@ const Methodology = () => {
 
         {/* Metodologia */}
         <div className="bg-white dark:bg-black-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">🔍 Metodologia</h3>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4"> Metodologia</h3>
           <div className="prose prose-gray dark:prose-invert max-w-none">
             <div className="whitespace-pre-line text-gray-700 dark:text-gray-300 leading-relaxed">
               {methodology}

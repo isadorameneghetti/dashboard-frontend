@@ -105,23 +105,23 @@ export const dataSources = {
 };
 
 export const methodology = `
-## Metodologia dos Dados
+Metodologia dos Dados
 
 Os dados apresentados são baseados em pesquisas e relatórios oficiais de 2023-2024:
 
-### Fontes Principais:
-1. **TIOBE Index** - Ranking mensal de popularidade de linguagens
-2. **Stack Overflow Developer Survey** - Pesquisa com 90,000 desenvolvedores
-3. **JetBrains State of Developer Ecosystem** - Análise do ecossistema Java
-4. **GitHub Octoverse** - Dados de repositórios e uso
-5. **Glassdoor Salary Report** - Dados salariais do mercado
+Fontes Principais:
+1. TIOBE Index - Ranking mensal de popularidade de linguagens
+2. Stack Overflow Developer Survey - Pesquisa com 90,000 desenvolvedores
+3. JetBrains State of Developer Ecosystem - Análise do ecossistema Java
+4. GitHub Octoverse - Dados de repositórios e uso
+5. Glassdoor Salary Report - Dados salariais do mercado
 
-### Período de Coleta:
+Período de Coleta:
 - Dados mais recentes: Q1 2024
 - Base temporal: 2020-2024
 - Atualização trimestral
 
-### Notas Metodológicas:
+Notas Metodológicas:
 - Percentuais baseados em surveys com desenvolvedores profissionais
 - Salários em USD, ajustados por PPP quando aplicável
 - Crescimento calculado YoY (Year-over-Year)
