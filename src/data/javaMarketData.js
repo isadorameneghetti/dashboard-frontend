@@ -105,8 +105,6 @@ export const dataSources = {
 };
 
 export const methodology = `
-Metodologia dos Dados
-
 Os dados apresentados são baseados em pesquisas e relatórios oficiais de 2023-2024:
 
 Fontes Principais:
