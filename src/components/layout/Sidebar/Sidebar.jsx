@@ -30,7 +30,7 @@ const Sidebar = () => {
               <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
                 <FontAwesomeIcon icon="coffee" className="text-white text-sm" />
               </div>
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">Java Analytics</h1>
+              <h1 className="text-xl font-bold text-gray-900 dark:text-white">Java</h1>
             </div>
           )}
           <button
