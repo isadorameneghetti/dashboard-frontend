@@ -1,0 +1,13 @@
+.chart-container {
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    stroke: #f1f5f9;
+  }
+  
+  .dark & {
+    .recharts-cartesian-grid-horizontal line,
+    .recharts-cartesian-grid-vertical line {
+      stroke: #334155;
+    }
+  }
+}
