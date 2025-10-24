@@ -3,13 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Filter = ({ onPeriodChange }) => {
   const periods = [
-    { id: 'today', label: 'Hoje', icon: 'calendar' },
-    { id: 'week', label: 'Semana', icon: 'calendar' },
-    { id: 'month', label: 'Mês', icon: 'calendar' },
-    { id: 'year', label: 'Ano', icon: 'calendar' },
+    { id: 'yearly', label: 'Anual', icon: 'calendar-alt' },
+    { id: 'quarterly', label: 'Trimestral', icon: 'chart-bar' },
   ];
 
-  const [selectedPeriod, setSelectedPeriod] = useState('month');
+  const [selectedPeriod, setSelectedPeriod] = useState('yearly');
 
   const handlePeriodChange = (periodId) => {
     setSelectedPeriod(periodId);
@@ -17,14 +15,14 @@ const Filter = ({ onPeriodChange }) => {
   };
 
   return (
-    <div className="flex space-x-2 bg-gray-100 dark:bg-dark-700 rounded-lg p-1">
+    <div className="flex space-x-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
       {periods.map((period) => (
         <button
           key={period.id}
           onClick={() => handlePeriodChange(period.id)}
           className={`flex items-center px-4 py-2 rounded-md text-sm font-medium transition-all ${
             selectedPeriod === period.id
-              ? 'bg-white dark:bg-dark-600 text-gray-900 dark:text-white shadow-sm'
+              ? 'bg-primary-500 text-white shadow-sm'
               : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
           }`}
         >

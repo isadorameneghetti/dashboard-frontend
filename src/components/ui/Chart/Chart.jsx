@@ -1,11 +1,11 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
 
-const Chart = ({ data, type = 'area', color = '#3b82f6' }) => {
+const Chart = ({ data, type = 'area', color = '#eab308', height = '100%' }) => {
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white dark:bg-dark-800 p-3 rounded-lg shadow-lg border border-gray-200 dark:border-dark-700">
+        <div className="bg-white dark:bg-black-900 p-3 rounded-lg shadow-lg border border-gray-200 dark:border-gray-800">
           <p className="font-medium text-gray-900 dark:text-white">{`${label}`}</p>
           <p className="text-primary-600 dark:text-primary-400">
             {`Valor: ${payload[0].value.toLocaleString()}`}
@@ -17,7 +17,7 @@ const Chart = ({ data, type = 'area', color = '#3b82f6' }) => {
   };
 
   return (
-    <div className="w-full h-80">
+    <div className="w-full" style={{ height }}>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
           <defs>
@@ -29,7 +29,7 @@ const Chart = ({ data, type = 'area', color = '#3b82f6' }) => {
           <CartesianGrid 
             strokeDasharray="3 3" 
             stroke="#f0f0f0" 
-            className="dark:stroke-dark-600" 
+            className="dark:stroke-gray-800" 
           />
           <XAxis 
             dataKey="name" 
