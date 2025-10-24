@@ -13,6 +13,7 @@ const Sidebar = () => {
     { icon: 'code', label: 'Tecnologias', path: '/technologies' },
     { icon: 'briefcase', label: 'Empregos', path: '/jobs' },
     { icon: 'chart-bar', label: 'Relatórios', path: '/reports' },
+    { icon: 'clipboard-check', label: 'Metodologia', path: '/methodology' },
     { icon: 'cog', label: 'Configurações', path: '/settings' },
   ];
 

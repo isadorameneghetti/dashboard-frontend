@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Filter from '../../components/ui/Filter/Filter';
 import Card from '../../components/ui/Card/Card';
 import Chart from '../../components/ui/Chart/Chart';
-import { javaGrowthData, javaVersions } from '../../data/javaMarketData';
+import { javaGrowthData, javaVersions, dataSources } from '../../data/javaMarketData';
 
 const Dashboard = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('yearly');
@@ -13,38 +13,42 @@ const Dashboard = () => {
     { 
       title: 'Posição no Ranking', 
       value: `#${javaGrowthData.currentStats.globalRank}`, 
-      change: '+8.7%', 
+      change: `${javaGrowthData.currentStats.yoyGrowth}%`, 
       changeType: 'positive', 
       icon: 'trophy',
-      description: 'Crescimento anual'
+      description: 'TIOBE Index 2024',
+      source: dataSources.tiobe
     },
     { 
-      title: 'Vagas Abertas', 
-      value: javaGrowthData.currentStats.jobPostings.toLocaleString(), 
-      change: '+12%', 
+      title: 'Desenvolvedores Ativos', 
+      value: '9M+', 
+      change: '+5.2%', 
       changeType: 'positive', 
-      icon: 'briefcase',
-      description: 'Mercado global'
+      icon: 'users',
+      description: 'Global Estimate',
+      source: dataSources.jetbrains
     },
     { 
       title: 'Salário Médio', 
       value: `$${javaGrowthData.currentStats.averageSalary.toLocaleString()}`, 
-      change: '+5.2%', 
+      change: '+4.8%', 
       changeType: 'positive', 
       icon: 'dollar-sign',
-      description: 'USD/ano'
+      description: 'USD/ano - Stack Overflow',
+      source: dataSources.stackOverflow
     },
     { 
-      title: 'Adoção Empresarial', 
-      value: `${javaGrowthData.currentStats.enterpriseAdoption}%`, 
-      change: '+3.1%', 
+      title: 'Repositórios GitHub', 
+      value: `${(javaGrowthData.currentStats.githubRepos / 1000000).toFixed(1)}M`, 
+      change: '+12.3%', 
       changeType: 'positive', 
-      icon: 'building',
-      description: 'Fortune 500'
+      icon: 'code-branch',
+      description: 'Projetos Java ativos',
+      source: dataSources.github
     }
   ];
 
-  // Dados para gráficos
+  // Dados para gráficos baseados no período selecionado
   const getChartData = () => {
     if (selectedPeriod === 'quarterly') {
       return javaGrowthData.quarterlyTrend.map(item => ({
@@ -84,7 +88,7 @@ const Dashboard = () => {
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Mercado Java - Análise 2024</h2>
-                <p className="text-gray-600 dark:text-gray-400">Monitoramento em tons de amarelo e preto</p>
+                <p className="text-gray-600 dark:text-gray-400">Dados baseados em pesquisas oficiais do mercado</p>
               </div>
             </div>
           </div>
@@ -102,6 +106,7 @@ const Dashboard = () => {
               changeType={metric.changeType}
               icon={metric.icon}
               description={metric.description}
+              source={metric.source}
             />
           ))}
         </div>
@@ -119,7 +124,7 @@ const Dashboard = () => {
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
               {selectedPeriod === 'quarterly' 
                 ? 'Taxa de crescimento trimestral do Java no mercado' 
-                : 'Evolução da popularidade do Java (2019-2024)'}
+                : 'Evolução da popularidade do Java (2020-2024) - TIOBE Index'}
             </p>
             <div className="h-80">
               <Chart 
@@ -136,7 +141,7 @@ const Dashboard = () => {
               <FontAwesomeIcon icon="briefcase" className="text-primary-500" />
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-              Vagas de emprego e evolução salarial para desenvolvedores Java
+              Vagas de emprego e evolução salarial para desenvolvedores Java (Stack Overflow Survey)
             </p>
             <div className="h-80">
               <div className="flex space-x-4 h-full">
@@ -171,6 +176,9 @@ const Dashboard = () => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Market Share - Linguagens</h3>
               <FontAwesomeIcon icon="chart-pie" className="text-primary-500" />
             </div>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              Participação no mercado de linguagens de programação (Stack Overflow Survey 2023)
+            </p>
             <div className="space-y-3">
               {javaGrowthData.marketShare.map((lang, index) => (
                 <div key={index} className="flex items-center justify-between">
@@ -206,6 +214,9 @@ const Dashboard = () => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Ecossistema Java</h3>
               <FontAwesomeIcon icon="cogs" className="text-primary-500" />
             </div>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              Adoção de tecnologias no ecossistema Java (JetBrains Survey 2023)
+            </p>
             <div className="space-y-4">
               {javaGrowthData.technologies.map((tech, index) => (
                 <div key={index}>
@@ -234,6 +245,9 @@ const Dashboard = () => {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Versões Java - Adoção</h3>
             <FontAwesomeIcon icon="code-branch" className="text-primary-500" />
           </div>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            Adoção das versões do Java no mercado (JetBrains Survey 2023)
+          </p>
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
@@ -293,7 +307,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        // No final do arquivo, substitua a seção de Insights por:
         {/* Insights e Tendências */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
           <div className="bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-6 text-white">

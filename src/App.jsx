@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/layout/Sidebar/Sidebar';
 import Header from './components/layout/Header/Header';
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -7,6 +7,7 @@ import Developers from './pages/Developers/Developers';
 import Technologies from './pages/Technologies/Technologies';
 import Jobs from './pages/Jobs/Jobs';
 import Reports from './pages/Reports/Reports';
+import Methodology from './pages/Methodology/Methodology';
 import Settings from './pages/Settings/Settings';
 import './config/fontAwesome';
 
@@ -29,6 +30,7 @@ function App() {
               <Route path="/technologies" element={<Technologies />} />
               <Route path="/jobs" element={<Jobs />} />
               <Route path="/reports" element={<Reports />} />
+              <Route path="/methodology" element={<Methodology />} />
               <Route path="/settings" element={<Settings />} />
             </Routes>
           </main>

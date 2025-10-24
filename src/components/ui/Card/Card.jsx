@@ -1,7 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SourceBadge from '../SourceBadge/SourceBadge';
 
-const Card = ({ title, value, change, changeType, icon, description }) => {
+const Card = ({ title, value, change, changeType, icon, description, source }) => {
   const isPositive = changeType === 'positive';
   
   return (
@@ -16,7 +17,7 @@ const Card = ({ title, value, change, changeType, icon, description }) => {
               className="text-sm" 
             />
             <span className="text-sm font-medium ml-1">{change}</span>
-            <span className="text-xs text-gray-500 dark:text-gray-400 ml-1">vs último período</span>
+            <span className="text-xs text-gray-500 dark:text-gray-400 ml-1">vs último ano</span>
           </div>
           {description && (
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{description}</p>
@@ -26,6 +27,9 @@ const Card = ({ title, value, change, changeType, icon, description }) => {
           <FontAwesomeIcon icon={icon} className="text-primary-600 dark:text-primary-400 text-xl" />
         </div>
       </div>
+      
+      {/* Badge de fonte */}
+      <SourceBadge source={source} />
     </div>
   );
 };

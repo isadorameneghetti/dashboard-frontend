@@ -44,7 +44,9 @@ import {
   faDatabase,
   faCloud,
   faMobile,
-  faServer
+  faServer,
+  faBook, // ✅ NOVO ÍCONE ADICIONADO
+  faClipboardCheck
 } from '@fortawesome/free-solid-svg-icons'
 
 import { 
@@ -98,6 +100,59 @@ library.add(
   faCloud,
   faMobile,
   faServer,
+  faBook, 
+  faClipboardCheck,
   faBellRegular,
   faUserCircleRegular
 )
+
+// Export para uso em componentes individuais se necessário
+export {
+  faChartLine,
+  faUsers,
+  faDollarSign,
+  faChartBar,
+  faCog,
+  faSearch,
+  faBell,
+  faSun,
+  faMoon,
+  faChevronDown,
+  faArrowUp,
+  faArrowDown,
+  faHome,
+  faFileAlt,
+  faShoppingCart,
+  faEnvelope,
+  faCalendar,
+  faUserCircle,
+  faSignOutAlt,
+  faBars,
+  faTimes,
+  faEye,
+  faShoppingBag,
+  faPercent,
+  faExchangeAlt,
+  faBriefcase,
+  faBuilding,
+  faTrophy,
+  faCoffee,
+  faCodeBranch,
+  faChartPie,
+  faCogs,
+  faCaretUp,
+  faCaretDown,
+  faMinus,
+  faLightbulb,
+  faShieldAlt,
+  faCalendarAlt,
+  faUser,
+  faCode,
+  faFile,
+  faDatabase,
+  faCloud,
+  faMobile,
+  faServer,
+  faBook, 
+  faClipboardCheck
+}
