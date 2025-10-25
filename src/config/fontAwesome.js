@@ -22,18 +22,13 @@ import {
   faBars,
   faTimes,
   faEye,
-  faShoppingBag,
   faPercent,
-  faExchangeAlt,
   faBriefcase,
   faBuilding,
   faTrophy,
   faCoffee,
-  faCodeBranch,
   faChartPie,
   faCogs,
-  faCaretUp,
-  faCaretDown,
   faMinus,
   faLightbulb,
   faShieldAlt,
@@ -45,15 +40,22 @@ import {
   faCloud,
   faMobile,
   faServer,
-  faBook, // ✅ NOVO ÍCONE ADICIONADO
-  faClipboardCheck
+  faBook,
+  faClipboardCheck,
+  // Ícones com nomes verificados:
+  faCodeBranch,
+  faBagShopping,
+  faRightLeft,
+  faCaretUp,
+  faCaretDown
 } from '@fortawesome/free-solid-svg-icons'
 
 import { 
-  faBell as faBellRegular,
-  faUserCircle as faUserCircleRegular
+  faBell as farBell,
+  faUserCircle as farUserCircle
 } from '@fortawesome/free-regular-svg-icons'
 
+// Adicione apenas os ícones que existem
 library.add(
   faChartLine,
   faUsers,
@@ -77,18 +79,13 @@ library.add(
   faBars,
   faTimes,
   faEye,
-  faShoppingBag,
   faPercent,
-  faExchangeAlt,
   faBriefcase,
   faBuilding,
   faTrophy,
   faCoffee,
-  faCodeBranch,
   faChartPie,
   faCogs,
-  faCaretUp,
-  faCaretDown,
   faMinus,
   faLightbulb,
   faShieldAlt,
@@ -100,13 +97,18 @@ library.add(
   faCloud,
   faMobile,
   faServer,
-  faBook, 
+  faBook,
   faClipboardCheck,
-  faBellRegular,
-  faUserCircleRegular
+  // Ícones que existem nas versões mais recentes
+  faCodeBranch,
+  faCaretUp,
+  faCaretDown,
+  // Ícones regulares
+  farBell,
+  farUserCircle
 )
 
-// Export para uso em componentes individuais se necessário
+// Export para uso em componentes
 export {
   faChartLine,
   faUsers,
@@ -130,9 +132,7 @@ export {
   faBars,
   faTimes,
   faEye,
-  faShoppingBag,
   faPercent,
-  faExchangeAlt,
   faBriefcase,
   faBuilding,
   faTrophy,
@@ -153,6 +153,6 @@ export {
   faCloud,
   faMobile,
   faServer,
-  faBook, 
+  faBook,
   faClipboardCheck
 }
